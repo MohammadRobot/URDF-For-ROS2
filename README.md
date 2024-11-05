@@ -143,3 +143,6 @@ XACRO files cannot be directly used in robot simulators as they are not compatib
     In Gazebo, you can create a simulation with multiple robot models, including multiple instances of the same robot model. However, creating a simulation with multiple robots in the same world is not as simple as spawning a model multiple times. This is because each robot would listen to the same command topic, publish their sensor data to the same topics, and define the same TF frames. Therefore, any ROS nodes that rely on sensor data would not function properly, and you would not be able to control the robots individually. To fix this, you must use a different namespace for each robot. You can avoid naming collisions between different topics, TF frames, and nodes using namespaces.
 
 
+## Unit 8:   Robot Assembly Exporting
+
+### 8.2   Onshape Export
