@@ -1,7 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_box_bot">
+<xacro:property name="robot_name" value="$(arg robot_name)"/>
 
-<xacro:include filename="$(find my_box_bot_description)/urdf/box_bot.gazebo.xacro" />
+<xacro:arg name="use_sim" default="true" />
+    
+<!-- if we use Gazebo -->
+<xacro:if value="$(arg use_sim)">
+    <xacro:include filename="$(find my_box_bot_description)/urdf/box_bot.gazebo.xacro" />
+</xacro:if>
+
         
 <xacro:property name="body_width" value="0.1"/>
 <xacro:property name="body_lenght" value="0.1"/>
@@ -239,7 +246,7 @@
           <inertia ixx="5.145833333333334e-09" ixy="0" ixz="0" iyy="5.145833333333334e-09" iyz="0" izz="1.0125000000000003e-08"/>
       </inertial>
   </link>
-
+Exercise
   <joint name="back_roll_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0" />
     <parent link="back_yaw_link" />
@@ -280,4 +287,6 @@
     <limit effort="1000.0" velocity="100.0" />
     <dynamics damping="0.0" friction="0.1"/>
   </joint>
+
+
 </robot>

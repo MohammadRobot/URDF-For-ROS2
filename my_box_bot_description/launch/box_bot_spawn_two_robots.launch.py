@@ -7,6 +7,8 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 from ament_index_python.packages import get_package_prefix
 
+import xacro
+
 def generate_launch_description():
     
     pkg_box_bot_gazebo = get_package_share_directory('my_box_bot_gazebo')
@@ -56,7 +58,7 @@ def generate_launch_description():
     )
 
     # Define the robot model files to be used
-    robot_desc_file = "box_bot_final.urdf"
+    robot_desc_file = "box_bot.xacro"
     robot_desc_path = os.path.join(get_package_share_directory(
         "my_box_bot_description"), "urdf", robot_desc_file)
 
